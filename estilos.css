@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --tamanhoHeader: 8rem;
+    --tamanhoMain: calc(100vh - 2 * var(--tamanhoHeader));
+    --corHeader: #096897;
+    --corMain: #323232;
+    --corTexto: #ffffff;
+}
+
+body {
+    color: var(--corTexto);
+}
+
+header, footer {
+    height: var(--tamanhoHeader);
+    display: flex;
+    background-color: #096897;
+}
+
+main {
+    height: var(--tamanhoMain);
+    background-color: var(--corMain);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
