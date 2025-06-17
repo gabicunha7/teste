@@ -23,7 +23,20 @@ header, footer {
     background-color: #096897;
 }
 
+header .container,
+main .container,
+footer .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .container {
+    flex-direction: column;
+}
+
 main {
+    display: flex;
     height: var(--tamanhoMain);
     background-color: var(--corMain);
 }
