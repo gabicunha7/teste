@@ -20,6 +20,15 @@
         <div id="img"></div>
     </div>
 
+    <section>
+        <section class="inserir">
+            <input type="date" id="ipt_data">
+            <button onclick="buscarFoto()" class="btn">Buscar</button>
+        </section>
+            
+        <section id="resultado"></section>
+    </section>
+
     
 
 
@@ -29,6 +38,16 @@
     function aparecer(){
         img.innerHTML+=`<img src="imgs/goku.jpeg" width="80px">`
     }
+    async function buscarFoto(){
+            let dataDigitada = ipt_data.value;
+            console.log(dataDigitada)
+
+            let retornoConvertido = await fetch(`https://api.nasa.gov/planetary/apod?api_key=nGEj4FjgQlpVVqgUp6wha1VSckX9WnjlwUecVVX8&date=${dataDigitada}`)
+                .then((resposta) => resposta.json());
+
+                console.log("Resposta final: ", retornoConvertido);
+                resultado.innerHTML = `<div class="card"><img src="${retornoConvertido.url}" class="foto"> <span>${retornoConvertido.title}</span></div>`;
+        }
     
 </script>
 </html>
